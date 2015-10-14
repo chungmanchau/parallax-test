@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'roboto';
+}
+
+.parallax-board {
+    position: relative;
+    display: block;
+    height: 900px;
+    width: 100%;
+}
+
+.parallax-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    clip: rect(0,auto,auto,0);
+    height: 100%;
+    width: 100%;
+}
+.parallax-layer {
+    position: fixed;
+    top: 0;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-container:after {
+    background: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 100%);
+    bottom: 3px;
+    content: '';
+    display: block;
+    height: 0;
+    left: 0;
+    padding-bottom: 30%;
+    position: absolute;
+    right: 0;
+    z-index: 20;
+}
+  .layer-0 {
+    background-image: url("http://www.sky.com/assets/2198f4b57c541f61af8f130f71831fa3.jpg");
+  }
+  .layer-1 {
+    background-image: url("http://www.sky.com/assets/286a970ca891e99f60d515048cd77e60.jpg");
+  }
+  .layer-2 {
+    background-image: url("http://www.sky.com/assets/67765114250ad6d67a0149f3b2480a63.jpg");
+  }
+
+.content-container  {
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    height: 100%;
+    background: #415a6c;
+    text-align: center;
+    color: #333;
+    font-size: 25px;
+    width: 100%;
+    padding: 150px 0;
+    background: radial-gradient(ellipse at center,#fff 0,#e5e5eb 54%,#c9c7d1 71%);
+}
+
+.content-container:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    padding-bottom: 30%;
+    height: 0;
+    right: 0;
+    z-index: 20;
+    background: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.2) 100%);
+}
+.content {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.content img {
+    float: left;
+}
+
+.content.alt img {
+    float: right;
+}
+
+.content .content-info {
+    margin: 150px 0px 100px 50px;
+    float: left;
+    width: 50%;
+      text-align: left;
+}
+  .content h1 {
+      margin-top: 0px;
+    color: #333;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  .content p {
+      line-height: 2;
+  }
+
+.glint-container {
+    width: 100%;
+    height: 3px;
+    margin-left: -200px;
+    margin-top: -3px;
+    background: none;
+    position: relative;
+    z-index: 20;
+}
+
+.glint {
+    position: absolute;
+    top: -18px;
+    height: 46px;
+    width: 446px;
+    background: url("http://www.sky.com/assets/da40e410d66160d75b6b033ef657d88f.png");
+}
