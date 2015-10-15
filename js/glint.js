@@ -8,20 +8,21 @@ GlintPart = (function() {
         // console.log($(el).parent().prev());
     }
 
-    GlintPart.prototype.update = function(scrollY, i) {
-        var pageOffset = scrollY;
+    GlintPart.prototype.update = function(i) {
+        var pageOffset = Math.max(window.pageYOffset, 0);
         var distance = -(this.glintParentOffset - pageOffset);
         var glintIndex = 1 / (parseInt(i) + 1);
         var glintDistance = this.glintOffset / (distance / glintIndex);
         var glintPerc = (1 / glintDistance) * 100;
-        console.log("Glint Offset" + this.glintOffset);
-        console.log("Percent Move" + glintDistance);
-        console.log("-----");
         this.setYTransform(glintPerc.toFixed(1));
     };
 
     GlintPart.prototype.setYTransform = function(val) {
-        this.el.style.left =  val + "%";
+        if(this.el.classList.contains("right")) {
+            this.el.style.right =  val + "%";
+        } else {
+            this.el.style.left =  val + "%";
+        }
     };
 
     return GlintPart;
@@ -57,9 +58,8 @@ GlintManager = (function() {
     };
 
     GlintManager.prototype.scrollHandler = function() {
-        var scrollY = Math.max(window.pageYOffset, 0);
         for (var i in this.parts) {
-            this.parts[i].update(scrollY, i);
+            this.parts[i].update(i);
         }
     };
 

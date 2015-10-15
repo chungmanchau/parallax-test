@@ -1,6 +1,98 @@
+
+
 body {
   margin: 0;
   font-family: 'roboto';
+  color: #333;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.2s ease-in;
+    background: none;
+}
+
+header.fixed {
+    /*background: red;*/
+    background: rgba(255, 255, 255, 0.9);
+    /*background-clip: content-box;*/
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+header.fixed .header-container {
+    padding: 10px 0px;
+}
+
+.header-container {
+    transition: padding 0.2s ease-in;
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 1200px;
+    position: relative;
+    z-index: 21;
+}
+
+header.fixed:before {
+    opacity: 0;
+}
+
+header:before {
+    background: linear-gradient(to top,transparent 0%,rgba(0,0,0,.8) 100%);
+    top: 0px;
+    content: '';
+    display: block;
+    height: 0;
+    left: 0;
+    padding-top: 140px;
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    opacity: 1;
+    transition: opacity 0.25s ease-in;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#logo {
+    display: inline-block;
+    margin: 0px 30px 0px 0;
+}
+
+header ul {
+    float: right;
+    margin-top: 20px;
+}
+
+header ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header.fixed ul li a {
+    color: #333;
+}
+header ul li a {
+    transition: all .1s ease-in-out;
+    color: #FFF;
+}
+
+header ul li a:hover {
+    color: #0073c5;
 }
 
 .parallax-board {
